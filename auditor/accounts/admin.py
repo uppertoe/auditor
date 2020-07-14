@@ -1,4 +1,6 @@
 from django.contrib import admin
+from .models import UserProfile, UserLogin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Register your models here.
 
@@ -29,4 +31,4 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
 
     #Link the UserProfile to the User admin view
-    inlines = (UserProfileInline)
+    inlines = (UserProfileInline,)
